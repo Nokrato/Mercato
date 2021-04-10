@@ -2,6 +2,7 @@ package com.nextplugins.nextmarket.api.model.product;
 
 import com.nextplugins.nextmarket.api.model.category.Category;
 import com.nextplugins.nextmarket.configuration.value.ConfigValue;
+import com.nextplugins.nextmarket.hook.model.CurrencyHookType;
 import com.nextplugins.nextmarket.util.NumberUtils;
 import lombok.Builder;
 import lombok.Data;
@@ -31,6 +32,8 @@ public final class Product {
     private final ItemStack itemStack;
     private final double price;
 
+    private CurrencyHookType currencyHookType;
+
     @Builder.Default private final Instant createAt = Instant.now();
 
     private transient Category category;
@@ -51,21 +54,23 @@ public final class Product {
      * @return item stack
      */
     public ItemStack toViewItemStack(List<String> lore) {
-        ItemStack itemStack = this.itemStack.clone();
 
+        ItemStack itemStack = this.itemStack.clone();
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         List<String> itemLore = itemMeta.getLore();
         if (itemLore == null) itemLore = new LinkedList<>();
+
         itemLore.addAll(lore
                 .stream()
                 .map(line -> line
                         .replace("%seller%", this.seller.getName())
+                        .replace("%economyType%", this.currencyHookType.getName())
                         .replace("%price%", NumberUtils.formatNumber(this.price)))
                 .collect(Collectors.toList())
         );
-        itemMeta.setLore(itemLore);
 
+        itemMeta.setLore(itemLore);
         itemStack.setItemMeta(itemMeta);
 
         return itemStack;

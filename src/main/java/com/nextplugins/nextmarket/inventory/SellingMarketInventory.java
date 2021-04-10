@@ -28,7 +28,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-
 public final class SellingMarketInventory extends PagedInventory {
 
     @Inject private ProductStorage productStorage;

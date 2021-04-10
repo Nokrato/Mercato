@@ -6,11 +6,14 @@ import com.yuhtin.minecraft.heroesmines.service.player.controller.PlayerControll
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
 
+import javax.inject.Singleton;
+
 /**
  * @author Yuhtin
  * Github: https://github.com/Yuhtin
  */
-public class TokensHook implements CurrencyHook {
+@Singleton
+public final class TokensHook implements CurrencyHook {
 
     @Override
     public boolean has(OfflinePlayer player, double amount) {

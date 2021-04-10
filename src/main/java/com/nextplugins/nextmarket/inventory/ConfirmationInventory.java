@@ -63,24 +63,6 @@ public final class ConfirmationInventory extends SimpleInventory {
         }
     }
 
-    private InventoryItem confirmInventoryItem() {
-        ItemStack itemStack = new ItemStack(TypeUtil.getType("STAINED_CLAY"),
-                1,
-                (short) 13
-        );
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName("§aConfirmar");
-        itemMeta.setLore(Arrays.asList(
-                "§7Clique para confirmar esta ação!",
-                "§c§lOBS: §cEsta opção é irreversível!"
-        ));
-        itemMeta.addItemFlags(ItemFlag.values());
-        itemStack.setItemMeta(itemMeta);
-
-        return InventoryItem.of(itemStack)
-                .defaultCallback(event -> acceptRunnable(event.getViewer(), "confirm"));
-    }
-
     private InventoryItem declineInventoryItem() {
         ItemStack itemStack = new ItemStack(TypeUtil.getType("STAINED_CLAY"),
                 1,
@@ -97,6 +79,21 @@ public final class ConfirmationInventory extends SimpleInventory {
 
         return InventoryItem.of(itemStack)
                 .defaultCallback(event -> acceptRunnable(event.getViewer(), "decline"));
+    }
+
+    private InventoryItem confirmInventoryItem() {
+        ItemStack itemStack = new ItemStack(TypeUtil.getType("STAINED_CLAY"));
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setDisplayName("§aConfirmar");
+        itemMeta.setLore(Arrays.asList(
+                "§7Clique para confirmar esta ação!",
+                "§c§lOBS: §cEsta opção é irreversível!"
+        ));
+        itemMeta.addItemFlags(ItemFlag.values());
+        itemStack.setItemMeta(itemMeta);
+
+        return InventoryItem.of(itemStack)
+                .defaultCallback(event -> acceptRunnable(event.getViewer(), "confirm"));
     }
 
     private void acceptRunnable(Viewer viewer, String property) {

@@ -52,17 +52,17 @@ messages:
   cancel-a-sell: '&cVocê cancelou a venda deste item!'
   collect-product: '&aVocê recolheu um produto que estava expirado!'
   expired-item: '&cUm item seu expirou no mercado, use &f/mercado expirados&c para coletar.'
-  bought-a-item: '&aVocê comprou um item do mercado.'
-  sold-a-item: '&aVocê vendeu um item por &f%amount% &ano mercado.'
-  selling-a-item: '&aVocê anunciou um item por &f%price% &ano mercado.'
-  selling-a-item-in-personal-market: '&aVocê anunciou um item por &f%price% &ano mercado pessoal de &f%player%&a.'
-  insufficient-money: '&cVocê precisa de mais %difference% para comprar este item.'
+  bought-a-item: '&3&LMERCADO &fVocê comprou um item do mercado.'
+  sold-a-item: '&3&LMERCADO &fVocê vendeu um item por &b%amount% %economyType% &fno mercado.'
+  selling-a-item: '&3&LMERCADO &fVocê anunciou um item por &b%price% %economyType% &fno mercado.'
+  selling-a-item-in-personal-market: '&3&LMERCADO &fVocê anunciou um item por &b%price% %economyType% &fno mercado pessoal de &b%player%&f.'
+  insufficient-money: '&cVocê precisa de mais %difference% %economyType% para comprar este item.'
   invalid-item: '&cEste item não pertence a nenhuma categoria.'
   full-inventory: '&cSeu inventário está cheio, cancelando operação!'
   selling-for-you: '&cVocê não pode vender um item para você mesmo!'
   category-not-exists: "&cOps, me parece que esta categoria não existe!"
   unavailable-product: "&COps, me parece que este produto não está mais disponível!"
-  announcement: "&2&lMERCADO &7%player%&f anunciou um item por &a%price%!"
-  private-announcement: "&2&lMERCADO &7%player%&f colocou um item em seu mercado pessoal!"
+  announcement: "&3&lMERCADO &b%player%&f anunciou um item por &b%price% %economyType%&f!"
+  private-announcement: "&2&lMERCADO &b%player%&f colocou um item em seu mercado pessoal!"
   changed-hand-item: "&cVocê mudou o item de sua mão em quando estava confirmando a ação, por favor, refaça a operação!"
   correct-usage-sell: "&cUse /mercado vender <valor> [jogador]!"

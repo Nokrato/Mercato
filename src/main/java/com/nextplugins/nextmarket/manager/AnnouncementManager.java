@@ -35,6 +35,7 @@ public final class AnnouncementManager {
         Player player = event.getPlayer();
         player.sendMessage(sellerMessage
                 .replace("%price%", NumberUtils.formatNumber(product.getPrice()))
+                .replace("%economyType%", product.getCurrencyHookType().getName())
                 .replace("%player%", destination != null ? destination.getName() : "")
         );
 
@@ -44,6 +45,7 @@ public final class AnnouncementManager {
             TextComponent component = TextUtils.sendItemTooltipMessage(
                     announcement
                             .replace("%price%", NumberUtils.formatNumber(product.getPrice()))
+                            .replace("%economyType%", product.getCurrencyHookType().getName())
                             .replace("%player%", player.getName()),
                     product.getItemStack());
             String clickCommand = "/mercado " + (destination == null ?

@@ -6,6 +6,7 @@ import com.nextplugins.nextmarket.api.model.category.Category;
 import com.nextplugins.nextmarket.api.model.product.Product;
 import com.nextplugins.nextmarket.configuration.value.ConfigValue;
 import com.nextplugins.nextmarket.configuration.value.MessageValue;
+import com.nextplugins.nextmarket.hook.model.CurrencyHookType;
 import com.nextplugins.nextmarket.storage.ProductStorage;
 import com.nextplugins.nextmarket.util.TypeUtil;
 import org.bukkit.Bukkit;

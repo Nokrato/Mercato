@@ -6,11 +6,15 @@ import com.yuhtin.minecraft.heroesmines.service.player.controller.PlayerControll
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
 
+import javax.inject.Singleton;
+
 /**
  * @author Yuhtin
  * Github: https://github.com/Yuhtin
  */
-public class CrystalHook implements CurrencyHook {
+
+@Singleton
+public final class CrystalHook implements CurrencyHook {
 
     @Override
     public boolean has(OfflinePlayer player, double amount) {
@@ -37,7 +41,7 @@ public class CrystalHook implements CurrencyHook {
         if (minePlayer.getCrystals() < amount) {
             return new EconomyResponse(amount, minePlayer.getCrystals(), EconomyResponse.ResponseType.FAILURE, "");
         }
-        
+
         minePlayer.setCrystals(minePlayer.getCrystals() - amount);
         return new EconomyResponse(amount, minePlayer.getCrystals(), EconomyResponse.ResponseType.SUCCESS, "");
 
