@@ -29,7 +29,7 @@ inventory:
     lore: # A lore (modificada) que será adicionada em baixo da lore (padrão) do item.
       - ''
       - '&7Vendedor: &f%seller%'
-      - '&7Preço: &e%price% coins'
+      - '&7Preço: &e%price% %economyType%'
       - ''
       - '&aClique para comprar este item!'
     buttons:
@@ -61,7 +61,7 @@ inventory:
     lore: # A lore (modificada) que será adicionada em baixo da lore (padrão) do item.
       - ''
       - '&7Vendedor: &f%seller%'
-      - '&7Preço: &e%price% coins'
+      - '&7Preço: &e%price% %economyType%'
       - ''
     buttons:
       update:

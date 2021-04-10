@@ -14,7 +14,7 @@ import com.nextplugins.nextmarket.command.MarketCommand;
 import com.nextplugins.nextmarket.configuration.ConfigurationLoader;
 import com.nextplugins.nextmarket.configuration.value.ConfigValue;
 import com.nextplugins.nextmarket.guice.PluginModule;
-import com.nextplugins.nextmarket.hook.EconomyHook;
+import com.nextplugins.nextmarket.hook.model.impl.CoinsHook;
 import com.nextplugins.nextmarket.listener.ProductBuyListener;
 import com.nextplugins.nextmarket.listener.ProductCreateListener;
 import com.nextplugins.nextmarket.listener.ProductRemoveListener;
@@ -43,7 +43,7 @@ public final class NextMarket extends JavaPlugin {
 
     @Inject @Named("main") private Logger logger;
 
-    @Inject private EconomyHook economyHook;
+    @Inject private CoinsHook coinsHook;
 
     @Inject private CategoryManager categoryManager;
     @Inject private ProductManager productManager;
@@ -71,7 +71,7 @@ public final class NextMarket extends JavaPlugin {
                 this.injector = PluginModule.of(this).createInjector();
                 this.injector.injectMembers(this);
 
-                economyHook.init();
+                coinsHook.init();
 
                 categoryManager.init();
                 productManager.init();

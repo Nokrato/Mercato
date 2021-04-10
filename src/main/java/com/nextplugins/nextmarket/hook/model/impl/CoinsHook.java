@@ -1,8 +1,9 @@
-package com.nextplugins.nextmarket.hook;
+package com.nextplugins.nextmarket.hook.model.impl;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
+import com.nextplugins.nextmarket.hook.model.CurrencyHook;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
@@ -12,7 +13,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import java.util.logging.Logger;
 
 @Singleton
-public final class EconomyHook {
+public final class CoinsHook implements CurrencyHook {
 
     @Inject @Named("main") private Logger logger;
     private Economy economy;
